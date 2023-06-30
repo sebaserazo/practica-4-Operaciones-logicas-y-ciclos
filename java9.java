@@ -1,35 +1,21 @@
 import java.util.Scanner;
 
-public class {
+public class PiedraPapelTijera {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Competidor 1: Ingresa tu elección (0 - piedra, 1 - papel, 2 - tijera): ");
-        int eleccion1 = scanner.nextInt();
+        System.out.print("Jugador 1 - Elija una opción (0: Piedra, 1: Papel, 2: Tijera): ");
+        int jugador1 = scanner.nextInt();
 
-        System.out.print("Competidor 2: Ingresa tu elección (0 - piedra, 1 - papel, 2 - tijera): ");
-        int eleccion2 = scanner.nextInt();
+        System.out.print("Jugador 2 - Elija una opción (0: Piedra, 1: Papel, 2: Tijera): ");
+        int jugador2 = scanner.nextInt();
 
-        String ganador = determinarGanador(eleccion1, eleccion2);
-
-        System.out.println("El ganador es: " + ganador);
-
-        scanner.close();
-    }
-
-    public static String determinarGanador(int eleccion1, int eleccion2) {
-        if (eleccion1 == eleccion2) {
-            return "Empate";
-        } else if ((eleccion1 == 0 && eleccion2 == 2) ||
-                   (eleccion1 == 1 && eleccion2 == 0) ||
-                   (eleccion1 == 2 && eleccion2 == 1)) {
-            return "Competidor 1";
-        } else if ((eleccion1 == 2 && eleccion2 == 0) ||
-                   (eleccion1 == 0 && eleccion2 == 1) ||
-                   (eleccion1 == 1 && eleccion2 == 2)) {
-            return "Competidor 2";
+        if (jugador1 == jugador2) {
+            System.out.println("¡Es un empate!");
+        } else if ((jugador1 == 0 && jugador2 == 2) || (jugador1 == 1 && jugador2 == 0) || (jugador1 == 2 && jugador2 == 1)) {
+            System.out.println("¡Jugador 1 gana!");
         } else {
-            return "Elecciones inválidas";
+            System.out.println("¡Jugador 2 gana!");
         }
     }
 }
